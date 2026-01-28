@@ -270,7 +270,6 @@ i {
         }
 
 .hero-image img {
-            background-image: "./veges.jpg"
             width: 100%;
             height: 400px;
             object-fit: cover;
@@ -279,7 +278,7 @@ i {
         }
 
 .hero-image img:hover {
-            transform: skewpadding: 2rem 1.5rem;(15deg)
+            transform: skew(15deg)
         }
 
 
