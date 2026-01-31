@@ -8,39 +8,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-       <!-- Header -->
-    <section id="header">
-        <header class="header">
-            <div class="container">
-               <div class="header-content">
-                   <div class="logo">
-                       <i class="fas fa-shopping-basket"></i>
-                       <span class="logo-text">Fresh Market</span>
-                    </div>
-                     <!-- nav-links -->
-                    <ul class="nav-links">
-                       <li><a href="#home">Home</a></li>
-                       <li><a href="#how">How it Works</a></li>
-                       <li><a href="#products">Products</a></li>
-                       <li><a href="#about">About</a></li>
-                    </ul>
+ <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
 
-                     <!-- sign-in button -->
-                    <button class="sign-btn">Sign-in</button>
+                <!-- Logo -->
+                <div class="logo">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span class="logo-text">Fresh Market</span>
+                </div>
 
-                    <!-- Hamburger Menu (Mobile) 
-            <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            -->
+                <!-- Nav Links -->
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#how">How it Works</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+
+                <!-- Sign In Button -->
+                <button class="sign-btn">Sign In</button>
+
+                <!-- Hamburger Menu (Mobile) -->
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
 
             </div>
-        </header>
-    </section>
+        </div>
+    </header>
 
-               <!-- Hero Section -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
             <div class="hero-grid">
@@ -52,9 +53,9 @@
                         FreshBasket Market connects you to trusted local markets and supermarkets so you can stock up on fresh produce, pantry staples and household essentials without leaving home.
                     </p>
                     <ul class="hero-features">
-                        <li>• Order before 4pm for free same-day delivery in selected markets</li>
-                        <li>• Real time stock from partner stores so you only see what is available</li>
-                        <li>• Secure checkout with saved addresses and payment methods</li>
+                        <li><i class="fas fa-check-circle"></i> Order before 4pm for free same-day delivery in selected markets</li>
+                        <li><i class="fas fa-check-circle"></i> Real time stock from partner stores so you only see what is available</li>
+                        <li><i class="fas fa-check-circle"></i> Secure checkout with saved addresses and payment methods</li>
                     </ul>
                     <div class="hero-buttons">
                         <button class="btn-primary">Start your first order</button>
@@ -70,51 +71,49 @@
         </div>
     </section>
 
-
-            <!-- How It Works Section -->
-<section class="how-it-works">
+<!-- How It Works Section -->
+    <section class="how-it-works">
         <div class="container">
             <h2 class="main-title">How FreshBasket Market works</h2>
             <p class="subtitle">From browsing to delivery, we make weekly shopping simple and predictable.</p>
-            
+
             <div class="grid">
-                <!-- Step 1: Browse  for local store-->
+
                 <div class="card">
-                    <div class="step-icon step-icon-green">
+                    <div class="step-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <h3 class="A-title">1. Browse local stores</h3>
+                    <h3 class="card-title">1. Browse local stores</h3>
                     <p class="description">
                         Enter your address to see nearby supermarkets and open-air markets. Filter by price, distance, or specialty products.
                     </p>
                 </div>
 
-                <!-- Step 2: Fill Basket -->
                 <div class="card">
-                    <div class="step-icon step-icon-green">
+                    <div class="step-icon">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
-                    <h3 class="A-title">2. Fill your basket</h3>
+                    <h3 class="card-title">2. Fill your basket</h3>
                     <p class="description">
                         Add fresh produce, grains, meat, snacks and household items. See live totals, delivery windows and substitution options.
                     </p>
                 </div>
 
-                <!-- Step 3: Track Delivery -->
                 <div class="card">
-                    <div class="step-icon step-icon-green">
+                    <div class="step-icon">
                         <i class="fas fa-bicycle"></i>
                     </div>
-                    <h3 class="A-title">3. Track your delivery</h3>
+                    <h3 class="card-title">3. Track your delivery</h3>
                     <p class="description">
                         Our shoppers pick and pack your order carefully. Follow your rider on the map and receive updates until it reaches your door.
                     </p>
                 </div>
+
             </div>
         </div>
     </section>
 
-     <!-- Categories Section -->
+    <!-- Categories Section -->
     <section class="categories">
         <div class="cat-container">
             <h2 class="main-title">Everything you need in one place</h2>
@@ -128,8 +127,8 @@
                         Crisp lettuce, ripe tomatoes, seasonal fruits, herbs and more sourced daily from partner farms and markets.
                     </p>
                     <ul class="cat-features">
-                        <li><i class='fas fa-check-circle'></i> Hand-selected produce with quality checks before dispatch</li>
-                        <li><i class='fas fa-check-circle'></i> Seasonal bundles designed for soups, salads and stir-fries</li>
+                        <li><i class="fas fa-check-circle"></i> Hand-selected produce with quality checks before dispatch</li>
+                        <li><i class="fas fa-check-circle"></i> Seasonal bundles designed for soups, salads and stir-fries</li>
                     </ul>
                 </div>
 
@@ -139,8 +138,8 @@
                         Stock up on rice, pasta, beans, flour, spices, tinned foods and everyday cooking essentials from trusted brands.
                     </p>
                     <ul class="cat-features">
-                        <li><i class='fas fa-check-circle'></i> Bulk and family-size options to help you save on weekly staples</li>
-                        <li><i class='fas fa-check-circle'></i> Clear labeling for dietary needs such as gluten-free or vegan</li>
+                        <li><i class="fas fa-check-circle"></i> Bulk and family-size options to help you save on weekly staples</li>
+                        <li><i class="fas fa-check-circle"></i> Clear labeling for dietary needs such as gluten-free or vegan</li>
                     </ul>
                 </div>
 
@@ -150,8 +149,8 @@
                         From milk, yoghurt and cheese to poultry, seafood and frozen vegetables, keep your fridge and freezer fully stocked.
                     </p>
                     <ul class="cat-features">
-                        <li><i class='fas fa-check-circle'></i> Temperature-controlled delivery to protect sensitive items</li>
-                        <li><i class='fas fa-check-circle'></i> Easy re-ordering of your fridge favourites in one tap</li>
+                        <li><i class="fas fa-check-circle"></i> Temperature-controlled delivery to protect sensitive items</li>
+                        <li><i class="fas fa-check-circle"></i> Easy re-ordering of your fridge favourites in one tap</li>
                     </ul>
                 </div>
 
@@ -159,18 +158,16 @@
         </div>
     </section>
 
-
-     <!-- CTA Section -->
+    <!-- CTA Section -->
     <section class="cta">
-            <div class="cta-content">
-                <h2 class="cta-title">Ready to simplify your grocery shopping?</h2>
-                <p class="cta-description">
-                    Create a free FreshBasket Market account, save your usual items and delivery addresses, and complete your next weekly shop in under ten minutes.
-                </p>
-                <button class="btn-cta">Create a free account</button>
-            </div>
+        <div class="cta-content">
+            <h2 class="cta-title">Ready to simplify your grocery shopping?</h2>
+            <p class="cta-description">
+                Create a free FreshBasket Market account, save your usual items and delivery addresses, and complete your next weekly shop in under ten minutes.
+            </p>
+            <button class="btn-cta">Create a free account</button>
+        </div>
     </section>
-
 
     <!-- Footer -->
     <footer class="footer">
@@ -182,12 +179,6 @@
         </div>
     </footer>
 
-        <script src="fresh.js"></script>
-
-    
+    <script src="fresh.js"></script>
 </body>
-
 </html>
-
-
-
