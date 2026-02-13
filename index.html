@@ -67,7 +67,8 @@
             </div>
         </div>
     </section>
-    
+
+      <!-- trust bar -->
     <section class="trust-bar">
         <div class="container">
             <div class="trust-items">
@@ -113,9 +114,9 @@
             </div>
         </div>
     </section>
-    
+
     <!-- How It Works Section -->
-    <section class="how-it-works">
+<section class="how-it-works" id="how">
         <div class="container">
             <h2 class="main-title">How FreshBasket Market works</h2>
             <p class="subtitle">From browsing to delivery, we make weekly shopping simple and predictable.</p>
@@ -155,7 +156,153 @@
             </div>
         </div>
     </section>
+    
+     <!-- Product catalog -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="main-title">Fresh picks today</h2>
+            <p class="subtitle">Hand-selected items available for same-day delivery in your area.</p>
 
+            <!-- Filter Tabs -->
+            <div class="product-filters">
+                <button class="filter-btn active" data-filter="all">All Items</button>
+                <button class="filter-btn" data-filter="fresh">Fresh & Veg</button>
+                <button class="filter-btn" data-filter="pantry">Pantry</button>
+                <button class="filter-btn" data-filter="dairy">Dairy & Meat</button>
+                <button class="filter-btn" data-filter="frozen">Frozen</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid">
+
+                <div class="product-card" data-category="fresh">
+                    <div class="product-badge">Fresh</div>
+                    <div class="product-img">🥦</div>
+                    <div class="product-info">
+                        <h4 class="product-name">Fresh Broccoli</h4>
+                        <p class="product-store">Shoprite</p>
+                        <div class="product-footer">
+                            <span class="product-price">₦450 <small>/ kg</small></span>
+                            <button class="add-to-cart" aria-label="Add Fresh Broccoli to cart">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="fresh">
+                    <div class="product-badge">Fresh</div>
+                    <div class="product-img">🍅</div>
+                    <div class="product-info">
+                        <h4 class="product-name">Ripe Tomatoes</h4>
+                        <p class="product-store">Local Market</p>
+                        <div class="product-footer">
+                            <span class="product-price">₦300 <small>/ basket</small></span>
+                            <button class="add-to-cart" aria-label="Add Ripe Tomatoes to cart">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="dairy">
+                    <div class="product-badge best-seller">Best Seller</div>
+                    <div class="product-img">🥩</div>
+                    <div class="product-info">
+                        <h4 class="product-name">Chicken Breast</h4>
+                        <p class="product-store">FreshMart</p>
+                        <div class="product-footer">
+                            <span class="product-price">₦2,800 <small>/ kg</small></span>
+                            <button class="add-to-cart" aria-label="Add Chicken Breast to cart">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="pantry">
+                    <div class="product-img">🥛</div>
+                    <div class="product-info">
+                        <h4 class="product-name">Peak Milk</h4>
+                        <p class="product-store">Shoprite</p>
+                        <div class="product-footer">
+                            <span class="product-price">₦850 <small>/ tin</small></span>
+                            <button class="add-to-cart" aria-label="Add Peak Milk to cart">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="fresh">
+                    <div class="product-badge sale">Sale</div>
+                    <div class="product-img">🍌</div>
+                    <div class="product-info">
+                        <h4 class="product-name">Ripe Plantain</h4>
+                        <p class="product-store">Local Market</p>
+                        <div class="product-footer">
+                            <span class="product-price">₦600 <small>/ bunch</small></span>
+                            <button class="add-to-cart" aria-label="Add Ripe Plantain to cart">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="pantry">
+                    <div class="product-img">🍚</div>
+                    <div class="product-info">
+                        <h4 class="product-name">Basmati Rice 5kg</h4>
+                        <p class="product-store">Shoprite</p>
+                        <div class="product-footer">
+                            <span class="product-price">₦4,500 <small>/ bag</small></span>
+                            <button class="add-to-cart" aria-label="Add Basmati Rice to cart">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="frozen">
+                    <div class="product-img">🧊</div>
+                    <div class="product-info">
+                        <h4 class="product-name">Frozen Fish Fillet</h4>
+                        <p class="product-store">FreshMart</p>
+                        <div class="product-footer">
+                            <span class="product-price">₦3,200 <small>/ kg</small></span>
+                            <button class="add-to-cart" aria-label="Add Frozen Fish to cart">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="dairy">
+                    <div class="product-badge best-seller">Best Seller</div>
+                    <div class="product-img">🥚</div>
+                    <div class="product-info">
+                        <h4 class="product-name">Farm Fresh Eggs</h4>
+                        <p class="product-store">Local Farm</p>
+                        <div class="product-footer">
+                            <span class="product-price">₦1,200 <small>/ crate</small></span>
+                            <button class="add-to-cart" aria-label="Add Farm Eggs to cart">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Cart Toast Notification -->
+            <div class="cart-toast" id="cartToast" role="alert" aria-live="polite">
+                <i class="fas fa-check-circle"></i>
+                <span id="cartToastMsg">Item added to cart!</span>
+            </div>
+
+        </div>
+    </section>
+    
     <!-- Categories Section -->
     <section class="categories">
         <div class="cat-container">
