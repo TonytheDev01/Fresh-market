@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fresh-Market</title>
+    <title>FreshBasket Market — Same-Day Grocery Delivery</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
- <!-- Header -->
+
+    <!--  HEADER-->
     <header class="header">
         <div class="container">
             <div class="header-content">
@@ -38,8 +39,11 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-<section class="hero" id="home">
+
+    <!-- =============================================
+         HERO SECTION
+    ============================================== -->
+    <section class="hero" id="home">
         <div class="hero-container">
             <div class="hero-grid">
 
@@ -68,7 +72,10 @@
         </div>
     </section>
 
-      <!-- trust bar -->
+
+    <!-- =============================================
+         TRUST BAR (Phase 1)
+    ============================================== -->
     <section class="trust-bar">
         <div class="container">
             <div class="trust-items">
@@ -115,8 +122,102 @@
         </div>
     </section>
 
-    <!-- How It Works Section -->
-<section class="how-it-works" id="how">
+
+    <!-- =============================================
+         [PHASE 2 — NEW] PARTNER STORE LOGOS
+         WHY HERE: Right after trust bar stats.
+         The numbers build credibility first, then
+         the logos back them up with recognizable
+         brands. This is the exact pattern used by
+         Instacart, Uber Eats, and DoorDash.
+    ============================================== -->
+    <section class="partners">
+        <div class="container">
+
+            <p class="partners-label">Trusted by stores you already love</p>
+
+            <div class="partners-track-wrapper">
+                <div class="partners-track" id="partnersTrack">
+
+                    <!-- Logo cards — duplicated for infinite scroll effect -->
+                    <div class="partner-logo">
+                        <i class="fas fa-store"></i>
+                        <span>Shoprite</span>
+                    </div>
+                    <div class="partner-logo">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>FreshMart</span>
+                    </div>
+                    <div class="partner-logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>GreenFarm</span>
+                    </div>
+                    <div class="partner-logo">
+                        <i class="fas fa-store-alt"></i>
+                        <span>SuperSave</span>
+                    </div>
+                    <div class="partner-logo">
+                        <i class="fas fa-apple-alt"></i>
+                        <span>NaturalBite</span>
+                    </div>
+                    <div class="partner-logo">
+                        <i class="fas fa-carrot"></i>
+                        <span>FarmDirect</span>
+                    </div>
+                    <div class="partner-logo">
+                        <i class="fas fa-bread-slice"></i>
+                        <span>BakersHub</span>
+                    </div>
+                    <div class="partner-logo">
+                        <i class="fas fa-fish"></i>
+                        <span>SeaFresh</span>
+                    </div>
+
+                    <!-- Duplicates for seamless loop -->
+                    <div class="partner-logo" aria-hidden="true">
+                        <i class="fas fa-store"></i>
+                        <span>Shoprite</span>
+                    </div>
+                    <div class="partner-logo" aria-hidden="true">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>FreshMart</span>
+                    </div>
+                    <div class="partner-logo" aria-hidden="true">
+                        <i class="fas fa-leaf"></i>
+                        <span>GreenFarm</span>
+                    </div>
+                    <div class="partner-logo" aria-hidden="true">
+                        <i class="fas fa-store-alt"></i>
+                        <span>SuperSave</span>
+                    </div>
+                    <div class="partner-logo" aria-hidden="true">
+                        <i class="fas fa-apple-alt"></i>
+                        <span>NaturalBite</span>
+                    </div>
+                    <div class="partner-logo" aria-hidden="true">
+                        <i class="fas fa-carrot"></i>
+                        <span>FarmDirect</span>
+                    </div>
+                    <div class="partner-logo" aria-hidden="true">
+                        <i class="fas fa-bread-slice"></i>
+                        <span>BakersHub</span>
+                    </div>
+                    <div class="partner-logo" aria-hidden="true">
+                        <i class="fas fa-fish"></i>
+                        <span>SeaFresh</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =============================================
+         HOW IT WORKS (Phase 1)
+    ============================================== -->
+    <section class="how-it-works" id="how">
         <div class="container">
             <h2 class="main-title">How FreshBasket Market works</h2>
             <p class="subtitle">From browsing to delivery, we make weekly shopping simple and predictable.</p>
@@ -157,13 +258,15 @@
         </div>
     </section>
 
-     <!-- Product catalog -->
+
+    <!-- =============================================
+         FEATURED PRODUCTS (Phase 1)
+    ============================================== -->
     <section class="products" id="products">
         <div class="container">
             <h2 class="main-title">Fresh picks today</h2>
             <p class="subtitle">Hand-selected items available for same-day delivery in your area.</p>
 
-            <!-- Filter Tabs -->
             <div class="product-filters">
                 <button class="filter-btn active" data-filter="all">All Items</button>
                 <button class="filter-btn" data-filter="fresh">Fresh & Veg</button>
@@ -172,7 +275,6 @@
                 <button class="filter-btn" data-filter="frozen">Frozen</button>
             </div>
 
-            <!-- Product Grid -->
             <div class="product-grid">
 
                 <div class="product-card" data-category="fresh">
@@ -294,7 +396,6 @@
 
             </div>
 
-            <!-- Cart Toast Notification -->
             <div class="cart-toast" id="cartToast" role="alert" aria-live="polite">
                 <i class="fas fa-check-circle"></i>
                 <span id="cartToastMsg">Item added to cart!</span>
@@ -302,9 +403,104 @@
 
         </div>
     </section>
-    
-    <!-- Categories Section -->
-<section class="categories">
+
+
+    <!-- =============================================
+         [PHASE 2 — NEW] COVERAGE CHECKER
+         WHY HERE: After products the user is engaged
+         and interested. This is the exact moment
+         they ask "but does it deliver to ME?"
+         Answering that question here prevents them
+         from leaving to find out.
+         NOTE: Cities list is hardcoded for frontend
+         demo. In production, replace with a real
+         geocoding API call (e.g. Google Maps API).
+    ============================================== -->
+    <section class="coverage" id="coverage">
+        <div class="container">
+
+            <div class="coverage-grid">
+
+                <div class="coverage-content">
+                    <span class="coverage-badge">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Check your area
+                    </span>
+                    <h2 class="coverage-title">Do we deliver to you?</h2>
+                    <p class="coverage-description">
+                        Enter your city or neighborhood below and we'll tell you instantly whether same-day delivery is available in your area.
+                    </p>
+
+                    <div class="coverage-form" id="coverageForm">
+                        <div class="coverage-input-group">
+                            <i class="fas fa-search coverage-search-icon"></i>
+                            <input
+                                type="text"
+                                id="coverageInput"
+                                class="coverage-input"
+                                placeholder="e.g. Lekki, Ikeja, Wuse II..."
+                                aria-label="Enter your location"
+                                autocomplete="off"
+                            >
+                            <button class="coverage-btn" id="coverageBtn">
+                                Check Now
+                            </button>
+                        </div>
+
+                        <!-- Result appears here -->
+                        <div class="coverage-result" id="coverageResult" aria-live="polite"></div>
+                    </div>
+
+                    <!-- Active Cities -->
+                    <div class="coverage-cities">
+                        <p class="coverage-cities-label">Currently active in:</p>
+                        <div class="coverage-city-tags">
+                            <span class="city-tag">Lagos</span>
+                            <span class="city-tag">Abuja</span>
+                            <span class="city-tag">Port Harcourt</span>
+                            <span class="city-tag">Ibadan</span>
+                            <span class="city-tag coming-soon">Kano <small>Coming soon</small></span>
+                            <span class="city-tag coming-soon">Enugu <small>Coming soon</small></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="coverage-visual">
+                    <div class="coverage-map-card">
+                        <div class="map-pulse">
+                            <div class="map-pulse-ring"></div>
+                            <div class="map-pulse-ring delay"></div>
+                            <i class="fas fa-map-marker-alt map-pin"></i>
+                        </div>
+                        <p class="map-card-text">Delivering across Nigeria</p>
+                        <div class="map-stats">
+                            <div class="map-stat">
+                                <strong>4</strong>
+                                <span>Active cities</span>
+                            </div>
+                            <div class="map-stat-divider"></div>
+                            <div class="map-stat">
+                                <strong>2</strong>
+                                <span>Coming soon</span>
+                            </div>
+                            <div class="map-stat-divider"></div>
+                            <div class="map-stat">
+                                <strong>24/7</strong>
+                                <span>Support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =============================================
+         CATEGORIES (Phase 1)
+    ============================================== -->
+    <section class="categories">
         <div class="cat-container">
             <h2 class="main-title">Everything you need in one place</h2>
             <p class="subtitle">Shop across aisles just like in a physical supermarket, without waiting in line.</p>
@@ -348,7 +544,10 @@
         </div>
     </section>
 
-     <!-- Delivery pricing section -->
+
+    <!-- =============================================
+         PRICING (Phase 1)
+    ============================================== -->
     <section class="pricing" id="pricing">
         <div class="container">
             <h2 class="main-title">Simple, honest delivery pricing</h2>
@@ -410,9 +609,12 @@
             </p>
         </div>
     </section>
-    
-    <!-- FAQ section -->
-     <section class="faq" id="faq">
+
+
+    <!-- =============================================
+         FAQ (Phase 1)
+    ============================================== -->
+    <section class="faq" id="faq">
         <div class="container">
             <h2 class="main-title">Frequently asked questions</h2>
             <p class="subtitle">Everything you need to know before placing your first order.</p>
@@ -482,9 +684,171 @@
             </div>
         </div>
     </section>
-    
-    <!-- CTA Section -->
- <section class="cta">
+
+
+    <!-- =============================================
+         [PHASE 2 — NEW] APP DOWNLOAD SECTION
+         WHY HERE: After FAQ the user is fully
+         informed and confident. This is the highest
+         intent point — nudge them to the app
+         before the final CTA. Every mature delivery
+         product (Jumia, Glovo, DoorDash) has this.
+    ============================================== -->
+    <section class="app-download">
+        <div class="container">
+
+            <div class="app-grid">
+
+                <div class="app-content">
+                    <span class="app-badge">
+                        <i class="fas fa-mobile-alt"></i>
+                        Mobile App
+                    </span>
+                    <h2 class="app-title">Shop on the go with the FreshBasket app</h2>
+                    <p class="app-description">
+                        Get the full experience on your phone. Track orders in real time, reorder your weekly staples in one tap, and get exclusive app-only deals.
+                    </p>
+
+                    <ul class="app-features">
+                        <li>
+                            <i class="fas fa-bell"></i>
+                            <span>Real-time delivery notifications</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-redo"></i>
+                            <span>One-tap reorder of your favourites</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-tag"></i>
+                            <span>Exclusive app-only discounts</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map"></i>
+                            <span>Live rider GPS tracking</span>
+                        </li>
+                    </ul>
+
+                    <div class="app-buttons">
+                        <a href="#" class="app-store-btn" aria-label="Download on the App Store">
+                            <i class="fab fa-apple"></i>
+                            <div class="app-store-text">
+                                <small>Download on the</small>
+                                <strong>App Store</strong>
+                            </div>
+                        </a>
+                        <a href="#" class="app-store-btn" aria-label="Get it on Google Play">
+                            <i class="fab fa-google-play"></i>
+                            <div class="app-store-text">
+                                <small>Get it on</small>
+                                <strong>Google Play</strong>
+                            </div>
+                        </a>
+                    </div>
+
+                    <p class="app-rating">
+                        <span class="app-stars">★★★★★</span>
+                        4.8 rating · 12,000+ reviews
+                    </p>
+                </div>
+
+                <div class="app-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="phone-header">
+                                <i class="fas fa-shopping-basket"></i>
+                                <span>FreshBasket</span>
+                            </div>
+                            <div class="phone-order-card">
+                                <div class="phone-order-icon">🛵</div>
+                                <div class="phone-order-info">
+                                    <strong>Order on the way!</strong>
+                                    <p>Arriving in 12 minutes</p>
+                                </div>
+                            </div>
+                            <div class="phone-items">
+                                <div class="phone-item">🥦 Fresh Broccoli</div>
+                                <div class="phone-item">🥩 Chicken Breast</div>
+                                <div class="phone-item">🍅 Ripe Tomatoes</div>
+                            </div>
+                            <div class="phone-total">
+                                <span>Total</span>
+                                <strong>₦4,150</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =============================================
+         [PHASE 2 — NEW] NEWSLETTER WITH DISCOUNT
+         WHY HERE: Between app download and CTA is
+         the last chance to capture users who aren't
+         ready to order yet. The ₦500 discount
+         creates enough incentive to hand over
+         an email. This is a lead generation
+         pattern used by every major e-commerce site.
+    ============================================== -->
+    <section class="newsletter">
+        <div class="container">
+
+            <div class="newsletter-content">
+
+                <div class="newsletter-offer">
+                    <div class="newsletter-discount">₦500</div>
+                    <p class="newsletter-off">OFF YOUR FIRST ORDER</p>
+                </div>
+
+                <div class="newsletter-body">
+                    <h2 class="newsletter-title">Get ₦500 off and never miss a deal</h2>
+                    <p class="newsletter-description">
+                        Subscribe to get your first-order discount, weekly fresh picks, and exclusive members-only offers delivered to your inbox.
+                    </p>
+
+                    <form class="newsletter-form" id="newsletterForm" novalidate>
+                        <div class="newsletter-input-group">
+                            <input
+                                type="email"
+                                id="newsletterEmail"
+                                class="newsletter-input"
+                                placeholder="Enter your email address"
+                                aria-label="Email address for newsletter"
+                                required
+                            >
+                            <button type="submit" class="newsletter-btn">
+                                Claim my ₦500
+                            </button>
+                        </div>
+                        <span class="newsletter-error" id="newsletterError"></span>
+                    </form>
+
+                    <!-- Success state (hidden by default) -->
+                    <div class="newsletter-success" id="newsletterSuccess" style="display:none;">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>You're in! Check your inbox.</strong>
+                            <p>Your ₦500 discount code is on its way.</p>
+                        </div>
+                    </div>
+
+                    <p class="newsletter-note">
+                        <i class="fas fa-lock"></i>
+                        No spam, ever. Unsubscribe anytime.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =============================================
+         CTA SECTION (Phase 1)
+    ============================================== -->
+    <section class="cta">
         <div class="cta-content">
             <h2 class="cta-title">Ready to simplify your grocery shopping?</h2>
             <p class="cta-description">
@@ -494,13 +858,15 @@
         </div>
     </section>
 
-    <!-- Footer -->
- <footer class="footer">
+
+    <!-- =============================================
+         FOOTER (Phase 1)
+    ============================================== -->
+    <footer class="footer">
         <div class="container">
 
             <div class="footer-grid">
 
-                <!-- Brand Column -->
                 <div class="footer-brand">
                     <div class="logo">
                         <i class="fas fa-shopping-basket logo-icon"></i>
@@ -525,7 +891,6 @@
                     </div>
                 </div>
 
-                <!-- Company Column -->
                 <div class="footer-col">
                     <h4 class="footer-heading">Company</h4>
                     <ul class="footer-links">
@@ -537,7 +902,6 @@
                     </ul>
                 </div>
 
-                <!-- Support Column -->
                 <div class="footer-col">
                     <h4 class="footer-heading">Support</h4>
                     <ul class="footer-links">
@@ -549,7 +913,6 @@
                     </ul>
                 </div>
 
-                <!-- Contact Column -->
                 <div class="footer-col">
                     <h4 class="footer-heading">Contact</h4>
                     <ul class="footer-contact">
@@ -574,7 +937,6 @@
 
             </div>
 
-            <!-- Footer Bottom Bar -->
             <div class="footer-bottom">
                 <div class="footer-legal">
                     <p>© 2025 FreshBasket Market. All rights reserved.</p>
@@ -592,6 +954,18 @@
         </div>
     </footer>
 
+    <!-- Floating CTA (Mobile only) — Phase 1 -->
+    <a href="#products" class="floating-cta" aria-label="Start shopping">
+        <i class="fas fa-shopping-basket"></i>
+        <span>Shop Now</span>
+    </a>
+
+    <!-- Back to Top — Phase 1 -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <script src="fresh.js"></script>
+
 </body>
 </html>
