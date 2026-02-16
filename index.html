@@ -406,7 +406,7 @@
          NOTE: Cities list is hardcoded for frontend
          demo. In production, replace with a real
          geocoding API call (e.g. Google Maps API). -->
-         
+
     <section class="coverage" id="coverage">
         <div class="container">
 
@@ -943,6 +943,133 @@
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <i class="fas fa-chevron-up"></i>
     </button>
+
+         <!-- AUTH MODAL — Sign In / Create Account -->
+    <div class="auth-overlay" id="authOverlay" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+        <div class="auth-modal">
+
+            <button class="auth-close" id="authClose" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="auth-logo">
+                <i class="fas fa-shopping-basket"></i>
+                <span>FreshBasket</span>
+            </div>
+
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="tabSignIn" data-tab="signin">Sign In</button>
+                <button class="auth-tab" id="tabSignUp" data-tab="signup">Create Account</button>
+            </div>
+
+            <!-- SIGN IN FORM -->
+            <div class="auth-form-wrapper" id="formSignIn">
+                <h2 class="auth-title" id="authModalTitle">Welcome back</h2>
+                <p class="auth-subtitle">Sign in to your FreshBasket account</p>
+                <form class="auth-form" id="signInForm" novalidate>
+                    <div class="field-group">
+                        <label for="siEmail">Email address</label>
+                        <div class="input-wrap">
+                            <i class="fas fa-envelope field-icon"></i>
+                            <input type="email" id="siEmail" placeholder="you@example.com" autocomplete="email">
+                        </div>
+                        <span class="field-error" id="siEmailErr"></span>
+                    </div>
+                    <div class="field-group">
+                        <div class="label-row">
+                            <label for="siPassword">Password</label>
+                            <button type="button" class="forgot-link" id="forgotBtn">Forgot password?</button>
+                        </div>
+                        <div class="input-wrap">
+                            <i class="fas fa-lock field-icon"></i>
+                            <input type="password" id="siPassword" placeholder="Enter your password" autocomplete="current-password">
+                            <button type="button" class="toggle-pw" aria-label="Show password" data-target="siPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="field-error" id="siPasswordErr"></span>
+                    </div>
+                    <button type="submit" class="auth-submit" id="signInSubmit">
+                        <span class="btn-text">Sign In</span>
+                        <span class="btn-spinner" style="display:none;"><i class="fas fa-circle-notch fa-spin"></i></span>
+                    </button>
+                </form>
+                <p class="auth-switch">
+                    Don't have an account?
+                    <button class="auth-switch-btn" data-switch="signup">Create one free</button>
+                </p>
+            </div>
+
+            <!-- CREATE ACCOUNT FORM -->
+            <div class="auth-form-wrapper" id="formSignUp" style="display:none;">
+                <h2 class="auth-title">Create your account</h2>
+                <p class="auth-subtitle">Join FreshBasket and get ₦500 off your first order</p>
+                <form class="auth-form" id="signUpForm" novalidate>
+                    <div class="field-group">
+                        <label for="suName">Full name</label>
+                        <div class="input-wrap">
+                            <i class="fas fa-user field-icon"></i>
+                            <input type="text" id="suName" placeholder="Your full name" autocomplete="name">
+                        </div>
+                        <span class="field-error" id="suNameErr"></span>
+                    </div>
+                    <div class="field-group">
+                        <label for="suEmail">Email address</label>
+                        <div class="input-wrap">
+                            <i class="fas fa-envelope field-icon"></i>
+                            <input type="email" id="suEmail" placeholder="you@example.com" autocomplete="email">
+                        </div>
+                        <span class="field-error" id="suEmailErr"></span>
+                    </div>
+                    <div class="field-group">
+                        <label for="suPassword">Password</label>
+                        <div class="input-wrap">
+                            <i class="fas fa-lock field-icon"></i>
+                            <input type="password" id="suPassword" placeholder="Min. 8 characters" autocomplete="new-password">
+                            <button type="button" class="toggle-pw" aria-label="Show password" data-target="suPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="field-error" id="suPasswordErr"></span>
+                    </div>
+                    <div class="field-group">
+                        <label for="suConfirm">Confirm password</label>
+                        <div class="input-wrap">
+                            <i class="fas fa-lock field-icon"></i>
+                            <input type="password" id="suConfirm" placeholder="Repeat your password" autocomplete="new-password">
+                            <button type="button" class="toggle-pw" aria-label="Show password" data-target="suConfirm">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="field-error" id="suConfirmErr"></span>
+                    </div>
+                    <button type="submit" class="auth-submit" id="signUpSubmit">
+                        <span class="btn-text">Create Account</span>
+                        <span class="btn-spinner" style="display:none;"><i class="fas fa-circle-notch fa-spin"></i></span>
+                    </button>
+                </form>
+                <p class="auth-switch">
+                    Already have an account?
+                    <button class="auth-switch-btn" data-switch="signin">Sign in</button>
+                </p>
+            </div>
+
+            <!-- SUCCESS STATE -->
+            <div class="auth-success" id="authSuccess" style="display:none;">
+                <div class="success-icon"><i class="fas fa-check"></i></div>
+                <h2 class="auth-title" id="successTitle">Welcome!</h2>
+                <p class="auth-subtitle" id="successMsg">You're signed in to FreshBasket.</p>
+                <button class="auth-submit" id="successContinue">Start Shopping</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- INFO TOAST (for forgot password, app store, etc.) -->
+    <div class="info-toast" id="infoToast" role="alert" aria-live="polite">
+        <i class="fas fa-info-circle"></i>
+        <span id="infoToastMsg"></span>
+    </div>
 
     <script src="index.js"></script>
 
