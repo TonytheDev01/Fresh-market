@@ -88,7 +88,7 @@ const AuthModal = (() => {
         authSuccess.style.display = panel === 'success' ? 'block' : 'none';
     }
 
-    function showSuccess(name, isNew) {
+function showSuccess(name, isNew) {
         document.getElementById('successTitle').textContent =
             isNew ? `Welcome, ${name}!` : `Welcome back, ${name}!`;
         document.getElementById('successMsg').textContent =
@@ -141,7 +141,6 @@ const AuthModal = (() => {
 
     return { open, close, showSuccess };
 })();
-
 
 // AUTH STATE MANAGER
 const AuthState = (() => {
@@ -216,7 +215,6 @@ const AuthState = (() => {
     return { login, logout, isLoggedIn, getUser };
 })();
 
-
 // SIGN IN FORM
 document.getElementById('signInForm').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -243,7 +241,6 @@ document.getElementById('signInForm').addEventListener('submit', async (e) => {
     AuthState.login({ name, email });
     AuthModal.showSuccess(name, false);
 });
-
 
 // CREATE ACCOUNT FORM
 document.getElementById('signUpForm').addEventListener('submit', async (e) => {
@@ -275,7 +272,6 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
     AuthModal.showSuccess(name, true);
 });
 
-
 // TOGGLE PASSWORD VISIBILITY
 document.querySelectorAll('.toggle-pw').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -288,7 +284,6 @@ document.querySelectorAll('.toggle-pw').forEach(btn => {
         }
     });
 });
-
 
 // BUTTON REACTIVITY MAP
 document.addEventListener('DOMContentLoaded', () => {
@@ -346,7 +341,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
 
 // PHASE 1 — HAMBURGER MENU
 const hamburger = document.getElementById('hamburger');
