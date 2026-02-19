@@ -31,7 +31,7 @@ That's product thinking — not just coding.
 
 🎬 Live Demo
 Live Site: [fresh-Market.netlify.app](https://tonyfresh-market.netlify.app/)
-GitHub Repo: github.com/yourusername/freshbasket-market
+GitHub Repo:[ github.com/yourusername/freshbasket-market](https://github.com/TonytheDev01/Fresh-market)
 Screenshots
 MobileTabletDesktopShow ImageShow ImageShow Image
 
