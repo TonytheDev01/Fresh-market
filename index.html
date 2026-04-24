@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreshBasket Market — Same-Day Grocery Delivery</title>
+    <title>FreshBasket Market | Same-Day Grocery Delivery</title>
+    <meta name="description" content="FreshBasket Market connects you to trusted local markets and supermarkets for same-day grocery delivery across Lagos, Abuja, Port Harcourt and Ibadan.">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-         <!-- HEADER -->
+
     <header class="header">
         <div class="container">
             <div class="header-content">
@@ -39,7 +40,6 @@
     </header>
 
 
-         <!-- HERO SECTION -->
     <section class="hero" id="home">
         <div class="hero-container">
             <div class="hero-grid">
@@ -51,8 +51,8 @@
                         FreshBasket Market connects you to trusted local markets and supermarkets so you can stock up on fresh produce, pantry staples and household essentials without leaving home.
                     </p>
                     <ul class="hero-features">
-                        <li>Order before 4pm for free same-day delivery in selected markets</li>
-                        <li>Real time stock from partner stores so you only see what is available</li>
+                        <li>Order before 4pm for free same-day delivery in selected areas</li>
+                        <li>Real-time stock from partner stores — you only see what's available</li>
                         <li>Secure checkout with saved addresses and payment methods</li>
                     </ul>
                     <div class="hero-buttons">
@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="hero-image">
-                    <img src="./veges.jpg" alt="Fresh groceries store" loading="lazy">
+                    <img src="./store.jpg" alt="Fresh groceries ready for delivery" loading="lazy">
                 </div>
 
             </div>
@@ -70,7 +70,6 @@
     </section>
 
 
-         <!-- TRUST BAR (Phase 1) -->
     <section class="trust-bar">
         <div class="container">
             <div class="trust-items">
@@ -78,7 +77,7 @@
                 <div class="trust-item">
                     <i class="fas fa-star"></i>
                     <div class="trust-text">
-                        <span class="trust-number" data-target="4.9">0</span>
+                        <span class="trust-number" data-target="4.8"></span>
                         <span class="trust-label">Average Rating</span>
                     </div>
                 </div>
@@ -88,7 +87,7 @@
                 <div class="trust-item">
                     <i class="fas fa-shopping-bag"></i>
                     <div class="trust-text">
-                        <span class="trust-number" data-target="50000">0</span>
+                        <span class="trust-number" data-target="50000"></span>
                         <span class="trust-label">Orders Delivered</span>
                     </div>
                 </div>
@@ -98,7 +97,7 @@
                 <div class="trust-item">
                     <i class="fas fa-store"></i>
                     <div class="trust-text">
-                        <span class="trust-number" data-target="200">0</span>
+                        <span class="trust-number" data-target="120"></span>
                         <span class="trust-label">Partner Stores</span>
                     </div>
                 </div>
@@ -108,7 +107,7 @@
                 <div class="trust-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <div class="trust-text">
-                        <span class="trust-number" data-target="30">0</span>
+                        <span class="trust-number" data-target="15"></span>
                         <span class="trust-label">Cities Covered</span>
                     </div>
                 </div>
@@ -118,96 +117,16 @@
     </section>
 
 
-         <!-- [PHASE 2 — NEW] PARTNER STORE LOGOS
-         WHY HERE: Right after trust bar stats.
-         The numbers build credibility first, then
-         the logos back them up with recognizable
-         brands. This is the exact pattern used by
-         Instacart, Uber Eats, and DoorDash. -->
     <section class="partners">
         <div class="container">
-
             <p class="partners-label">Trusted by stores you already love</p>
-
             <div class="partners-track-wrapper">
-                <div class="partners-track" id="partnersTrack">
-
-                    <!-- Logo cards — duplicated for infinite scroll effect -->
-                    <div class="partner-logo">
-                        <i class="fas fa-store"></i>
-                        <span>Shoprite</span>
-                    </div>
-                    <div class="partner-logo">
-                        <i class="fas fa-shopping-basket"></i>
-                        <span>FreshMart</span>
-                    </div>
-                    <div class="partner-logo">
-                        <i class="fas fa-leaf"></i>
-                        <span>GreenFarm</span>
-                    </div>
-                    <div class="partner-logo">
-                        <i class="fas fa-store-alt"></i>
-                        <span>SuperSave</span>
-                    </div>
-                    <div class="partner-logo">
-                        <i class="fas fa-apple-alt"></i>
-                        <span>NaturalBite</span>
-                    </div>
-                    <div class="partner-logo">
-                        <i class="fas fa-carrot"></i>
-                        <span>FarmDirect</span>
-                    </div>
-                    <div class="partner-logo">
-                        <i class="fas fa-bread-slice"></i>
-                        <span>BakersHub</span>
-                    </div>
-                    <div class="partner-logo">
-                        <i class="fas fa-fish"></i>
-                        <span>SeaFresh</span>
-                    </div>
-
-                    <!-- Duplicates for seamless loop -->
-                    <div class="partner-logo" aria-hidden="true">
-                        <i class="fas fa-store"></i>
-                        <span>Shoprite</span>
-                    </div>
-                    <div class="partner-logo" aria-hidden="true">
-                        <i class="fas fa-shopping-basket"></i>
-                        <span>FreshMart</span>
-                    </div>
-                    <div class="partner-logo" aria-hidden="true">
-                        <i class="fas fa-leaf"></i>
-                        <span>GreenFarm</span>
-                    </div>
-                    <div class="partner-logo" aria-hidden="true">
-                        <i class="fas fa-store-alt"></i>
-                        <span>SuperSave</span>
-                    </div>
-                    <div class="partner-logo" aria-hidden="true">
-                        <i class="fas fa-apple-alt"></i>
-                        <span>NaturalBite</span>
-                    </div>
-                    <div class="partner-logo" aria-hidden="true">
-                        <i class="fas fa-carrot"></i>
-                        <span>FarmDirect</span>
-                    </div>
-                    <div class="partner-logo" aria-hidden="true">
-                        <i class="fas fa-bread-slice"></i>
-                        <span>BakersHub</span>
-                    </div>
-                    <div class="partner-logo" aria-hidden="true">
-                        <i class="fas fa-fish"></i>
-                        <span>SeaFresh</span>
-                    </div>
-
-                </div>
+                <div class="partners-track" id="partnersTrack"></div>
             </div>
-
         </div>
     </section>
 
 
-         <!-- HOW IT WORKS (Phase 1) -->
     <section class="how-it-works" id="how">
         <div class="container">
             <h2 class="main-title">How FreshBasket Market works</h2>
@@ -250,7 +169,6 @@
     </section>
 
 
-         <!-- FEATURED PRODUCTS (Phase 1) -->
     <section class="products" id="products">
         <div class="container">
             <h2 class="main-title">Fresh picks today</h2>
@@ -258,132 +176,13 @@
 
             <div class="product-filters">
                 <button class="filter-btn active" data-filter="all">All Items</button>
-                <button class="filter-btn" data-filter="fresh">Fresh & Veg</button>
+                <button class="filter-btn" data-filter="fresh">Fresh &amp; Veg</button>
                 <button class="filter-btn" data-filter="pantry">Pantry</button>
-                <button class="filter-btn" data-filter="dairy">Dairy & Meat</button>
+                <button class="filter-btn" data-filter="dairy">Dairy &amp; Meat</button>
                 <button class="filter-btn" data-filter="frozen">Frozen</button>
             </div>
 
-            <div class="product-grid">
-
-                <div class="product-card" data-category="fresh">
-                    <div class="product-badge">Fresh</div>
-                    <div class="product-img">🥦</div>
-                    <div class="product-info">
-                        <h4 class="product-name">Fresh Broccoli</h4>
-                        <p class="product-store">Shoprite</p>
-                        <div class="product-footer">
-                            <span class="product-price">₦450 <small>/ kg</small></span>
-                            <button class="add-to-cart" aria-label="Add Fresh Broccoli to cart">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="fresh">
-                    <div class="product-badge">Fresh</div>
-                    <div class="product-img">🍅</div>
-                    <div class="product-info">
-                        <h4 class="product-name">Ripe Tomatoes</h4>
-                        <p class="product-store">Local Market</p>
-                        <div class="product-footer">
-                            <span class="product-price">₦300 <small>/ basket</small></span>
-                            <button class="add-to-cart" aria-label="Add Ripe Tomatoes to cart">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="dairy">
-                    <div class="product-badge best-seller">Best Seller</div>
-                    <div class="product-img">🥩</div>
-                    <div class="product-info">
-                        <h4 class="product-name">Chicken Breast</h4>
-                        <p class="product-store">FreshMart</p>
-                        <div class="product-footer">
-                            <span class="product-price">₦2,800 <small>/ kg</small></span>
-                            <button class="add-to-cart" aria-label="Add Chicken Breast to cart">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="pantry">
-                    <div class="product-img">🥛</div>
-                    <div class="product-info">
-                        <h4 class="product-name">Peak Milk</h4>
-                        <p class="product-store">Shoprite</p>
-                        <div class="product-footer">
-                            <span class="product-price">₦850 <small>/ tin</small></span>
-                            <button class="add-to-cart" aria-label="Add Peak Milk to cart">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="fresh">
-                    <div class="product-badge sale">Sale</div>
-                    <div class="product-img">🍌</div>
-                    <div class="product-info">
-                        <h4 class="product-name">Ripe Plantain</h4>
-                        <p class="product-store">Local Market</p>
-                        <div class="product-footer">
-                            <span class="product-price">₦600 <small>/ bunch</small></span>
-                            <button class="add-to-cart" aria-label="Add Ripe Plantain to cart">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="pantry">
-                    <div class="product-img">🍚</div>
-                    <div class="product-info">
-                        <h4 class="product-name">Basmati Rice 5kg</h4>
-                        <p class="product-store">Shoprite</p>
-                        <div class="product-footer">
-                            <span class="product-price">₦4,500 <small>/ bag</small></span>
-                            <button class="add-to-cart" aria-label="Add Basmati Rice to cart">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="frozen">
-                    <div class="product-img">🧊</div>
-                    <div class="product-info">
-                        <h4 class="product-name">Frozen Fish Fillet</h4>
-                        <p class="product-store">FreshMart</p>
-                        <div class="product-footer">
-                            <span class="product-price">₦3,200 <small>/ kg</small></span>
-                            <button class="add-to-cart" aria-label="Add Frozen Fish to cart">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="dairy">
-                    <div class="product-badge best-seller">Best Seller</div>
-                    <div class="product-img">🥚</div>
-                    <div class="product-info">
-                        <h4 class="product-name">Farm Fresh Eggs</h4>
-                        <p class="product-store">Local Farm</p>
-                        <div class="product-footer">
-                            <span class="product-price">₦1,200 <small>/ crate</small></span>
-                            <button class="add-to-cart" aria-label="Add Farm Eggs to cart">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <div class="product-grid"></div>
 
             <div class="cart-toast" id="cartToast" role="alert" aria-live="polite">
                 <i class="fas fa-check-circle"></i>
@@ -394,19 +193,8 @@
     </section>
 
 
-         <!-- [PHASE 2 — NEW] COVERAGE CHECKER
-         WHY HERE: After products the user is engaged
-         and interested. This is the exact moment
-         they ask "but does it deliver to ME?"
-         Answering that question here prevents them
-         from leaving to find out.
-         NOTE: Cities list is hardcoded for frontend
-         demo. In production, replace with a real
-         geocoding API call (e.g. Google Maps API). -->
-
     <section class="coverage" id="coverage">
         <div class="container">
-
             <div class="coverage-grid">
 
                 <div class="coverage-content">
@@ -430,26 +218,14 @@
                                 aria-label="Enter your location"
                                 autocomplete="off"
                             >
-                            <button class="coverage-btn" id="coverageBtn">
-                                Check Now
-                            </button>
+                            <button class="coverage-btn" id="coverageBtn">Check Now</button>
                         </div>
-
-                        <!-- Result appears here -->
                         <div class="coverage-result" id="coverageResult" aria-live="polite"></div>
                     </div>
 
-                    <!-- Active Cities -->
                     <div class="coverage-cities">
                         <p class="coverage-cities-label">Currently active in:</p>
-                        <div class="coverage-city-tags">
-                            <span class="city-tag">Lagos</span>
-                            <span class="city-tag">Abuja</span>
-                            <span class="city-tag">Port Harcourt</span>
-                            <span class="city-tag">Ibadan</span>
-                            <span class="city-tag coming-soon">Kano <small>Coming soon</small></span>
-                            <span class="city-tag coming-soon">Enugu <small>Coming soon</small></span>
-                        </div>
+                        <div class="coverage-city-tags"></div>
                     </div>
                 </div>
 
@@ -485,7 +261,6 @@
     </section>
 
 
-         <!-- CATEGORIES (Phase 1) -->
     <section class="categories">
         <div class="cat-container">
             <h2 class="main-title">Everything you need in one place</h2>
@@ -494,7 +269,7 @@
             <div class="cat-cards">
 
                 <div class="category">
-                    <h3 class="cat-title">Fresh fruit & vegetables</h3>
+                    <h3 class="cat-title">Fresh fruit &amp; vegetables</h3>
                     <p class="cat-description">
                         Crisp lettuce, ripe tomatoes, seasonal fruits, herbs and more sourced daily from partner farms and markets.
                     </p>
@@ -505,7 +280,7 @@
                 </div>
 
                 <div class="category">
-                    <h3 class="cat-title">Pantry & dry goods</h3>
+                    <h3 class="cat-title">Pantry &amp; dry goods</h3>
                     <p class="cat-description">
                         Stock up on rice, pasta, beans, flour, spices, tinned foods and everyday cooking essentials from trusted brands.
                     </p>
@@ -516,7 +291,7 @@
                 </div>
 
                 <div class="category">
-                    <h3 class="cat-title">Dairy, meat & frozen</h3>
+                    <h3 class="cat-title">Dairy, meat &amp; frozen</h3>
                     <p class="cat-description">
                         From milk, yoghurt and cheese to poultry, seafood and frozen vegetables, keep your fridge and freezer fully stocked.
                     </p>
@@ -530,7 +305,7 @@
         </div>
     </section>
 
-         <!-- PRICING (Phase 1) -->
+
     <section class="pricing" id="pricing">
         <div class="container">
             <h2 class="main-title">Simple, honest delivery pricing</h2>
@@ -562,9 +337,9 @@
                     <div class="pricing-amount">₦500</div>
                     <p class="pricing-condition">Flat fee, any order size</p>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> 2 – 4 hour delivery window</li>
+                        <li><i class="fas fa-check"></i> 2–4 hour delivery window</li>
                         <li><i class="fas fa-check"></i> Real-time rider tracking</li>
-                        <li><i class="fas fa-check"></i> SMS & app notifications</li>
+                        <li><i class="fas fa-check"></i> SMS &amp; app notifications</li>
                     </ul>
                     <button class="btn-primary shop-trigger">Start Shopping</button>
                 </div>
@@ -577,7 +352,7 @@
                     <div class="pricing-amount">₦1,200</div>
                     <p class="pricing-condition">Delivered within 2 hours</p>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Priority packing & dispatch</li>
+                        <li><i class="fas fa-check"></i> Priority packing &amp; dispatch</li>
                         <li><i class="fas fa-check"></i> Dedicated rider assigned</li>
                         <li><i class="fas fa-check"></i> Live GPS tracking</li>
                     </ul>
@@ -593,89 +368,18 @@
         </div>
     </section>
 
-         <!-- FAQ (Phase 1) -->
+
     <section class="faq" id="faq">
         <div class="container">
             <h2 class="main-title">Frequently asked questions</h2>
             <p class="subtitle">Everything you need to know before placing your first order.</p>
-
-            <div class="faq-grid">
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>What areas do you currently deliver to?</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We currently deliver across Lagos, Abuja, Port Harcourt, and Ibadan. We are expanding rapidly — enter your address at checkout to confirm coverage in your area.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>How do I track my order after placing it?</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Once your order is confirmed, you receive a tracking link via SMS and email. You can follow your rider on a live map from the moment they are dispatched until delivery.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>What happens if an item I ordered is out of stock?</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Our platform shows real-time stock from partner stores. In the rare case an item sells out after your order, we will contact you immediately to offer a suitable substitution or a full refund for that item.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Can I schedule a delivery for a specific time?</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes. At checkout you can choose a scheduled delivery slot for next-day delivery. Same-day delivery is available for orders placed before 4pm, subject to your location.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>What payment methods do you accept?</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We accept all major debit and credit cards, bank transfers, and mobile money. You can save your payment details securely for faster checkout on future orders.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>How do I return an item or get a refund?</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>If you receive a damaged, wrong, or spoiled item, report it within 24 hours via the app or our support line. Refunds are processed within 2 – 3 business days back to your original payment method.</p>
-                    </div>
-                </div>
-
-            </div>
+            <div class="faq-grid"></div>
         </div>
     </section>
 
 
-         <!-- [PHASE 2 — NEW] APP DOWNLOAD SECTION
-         WHY HERE: After FAQ the user is fully
-         informed and confident. This is the highest
-         intent point — nudge them to the app
-         before the final CTA. Every mature delivery
-         product (Jumia, Glovo, DoorDash) has this. -->
-
     <section class="app-download">
         <div class="container">
-
             <div class="app-grid">
 
                 <div class="app-content">
@@ -761,17 +465,9 @@
         </div>
     </section>
 
-         <!-- [PHASE 2 — NEW] NEWSLETTER WITH DISCOUNT
-         WHY HERE: Between app download and CTA is
-         the last chance to capture users who aren't
-         ready to order yet. The ₦500 discount
-         creates enough incentive to hand over
-         an email. This is a lead generation
-         pattern used by every major e-commerce site. -->
 
     <section class="newsletter">
         <div class="container">
-
             <div class="newsletter-content">
 
                 <div class="newsletter-offer">
@@ -795,15 +491,12 @@
                                 aria-label="Email address for newsletter"
                                 required
                             >
-                            <button type="submit" class="newsletter-btn">
-                                Claim my ₦500
-                            </button>
+                            <button type="submit" class="newsletter-btn">Claim my ₦500</button>
                         </div>
                         <span class="newsletter-error" id="newsletterError"></span>
                     </form>
 
-                    <!-- Success state (hidden by default) -->
-                    <div class="newsletter-success" id="newsletterSuccess" style="display:none;">
+                    <div class="newsletter-success" id="newsletterSuccess">
                         <i class="fas fa-check-circle"></i>
                         <div>
                             <strong>You're in! Check your inbox.</strong>
@@ -822,7 +515,6 @@
     </section>
 
 
-         <!-- CTA SECTION (Phase 1) -->
     <section class="cta">
         <div class="cta-content">
             <h2 class="cta-title">Ready to simplify your grocery shopping?</h2>
@@ -833,7 +525,7 @@
         </div>
     </section>
 
-         <!-- FOOTER (Phase 1) -->
+
     <footer class="footer">
         <div class="container">
 
@@ -890,7 +582,7 @@
                     <ul class="footer-contact">
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="355d5059595a75534750465d5754465e50411b565a58">[email&#160;protected]</a></span>
+                            <span>hello@freshbasket.ng</span>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
@@ -911,7 +603,7 @@
 
             <div class="footer-bottom">
                 <div class="footer-legal">
-                    <p>© 2025 FreshBasket Market. All rights reserved.</p>
+                    <p>&copy; 2025 FreshBasket Market. All rights reserved.</p>
                     <div class="footer-legal-links">
                         <a href="#">Privacy Policy</a>
                         <a href="#">Terms of Service</a>
@@ -926,18 +618,20 @@
         </div>
     </footer>
 
-    <!-- Floating CTA (Mobile only) — Phase 1 -->
+
+
+    <!-- Floating CTA — mobile only -->
     <a href="#products" class="floating-cta" aria-label="Start shopping">
         <i class="fas fa-shopping-basket"></i>
         <span>Shop Now</span>
     </a>
 
-    <!-- Back to Top — Phase 1 -->
+    <!-- Back to Top -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <i class="fas fa-chevron-up"></i>
     </button>
 
-         <!-- AUTH MODAL — Sign In / Create Account -->
+
     <div class="auth-overlay" id="authOverlay" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
         <div class="auth-modal">
 
@@ -984,7 +678,7 @@
                     </div>
                     <button type="submit" class="auth-submit" id="signInSubmit">
                         <span class="btn-text">Sign In</span>
-                        <span class="btn-spinner" style="display:none;"><i class="fas fa-circle-notch fa-spin"></i></span>
+                        <span class="btn-spinner"><i class="fas fa-circle-notch fa-spin"></i></span>
                     </button>
                 </form>
                 <p class="auth-switch">
@@ -994,7 +688,7 @@
             </div>
 
             <!-- CREATE ACCOUNT FORM -->
-            <div class="auth-form-wrapper" id="formSignUp" style="display:none;">
+            <div class="auth-form-wrapper" id="formSignUp">
                 <h2 class="auth-title">Create your account</h2>
                 <p class="auth-subtitle">Join FreshBasket and get ₦500 off your first order</p>
                 <form class="auth-form" id="signUpForm" novalidate>
@@ -1038,7 +732,7 @@
                     </div>
                     <button type="submit" class="auth-submit" id="signUpSubmit">
                         <span class="btn-text">Create Account</span>
-                        <span class="btn-spinner" style="display:none;"><i class="fas fa-circle-notch fa-spin"></i></span>
+                        <span class="btn-spinner"><i class="fas fa-circle-notch fa-spin"></i></span>
                     </button>
                 </form>
                 <p class="auth-switch">
@@ -1048,7 +742,7 @@
             </div>
 
             <!-- SUCCESS STATE -->
-            <div class="auth-success" id="authSuccess" style="display:none;">
+            <div class="auth-success" id="authSuccess">
                 <div class="success-icon"><i class="fas fa-check"></i></div>
                 <h2 class="auth-title" id="successTitle">Welcome!</h2>
                 <p class="auth-subtitle" id="successMsg">You're signed in to FreshBasket.</p>
@@ -1058,11 +752,14 @@
         </div>
     </div>
 
-    <!-- INFO TOAST (for forgot password, app store, etc.) -->
+    <!-- Info Toast -->
     <div class="info-toast" id="infoToast" role="alert" aria-live="polite">
         <i class="fas fa-info-circle"></i>
         <span id="infoToastMsg"></span>
     </div>
+
+
+    <script src="data.js"></script>
     <script src="index.js"></script>
 
 </body>

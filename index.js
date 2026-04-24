@@ -1,13 +1,22 @@
-/**
- * FreshBasket Market — fresh.js
- * Phase 1 + Phase 2 + Auth & Full Button Reactivity
- * Author: TonyDev
- */
 
 'use strict';
 
-// UTILITIES
+
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function ready(fn) {
+    if (document.readyState !== 'loading') fn();
+    else document.addEventListener('DOMContentLoaded', fn);
+}
+
+function escapeHTML(str) {
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
 
 function showToast(msg, duration = 3000) {
     const toast    = document.getElementById('infoToast');
@@ -49,7 +58,7 @@ function setButtonLoading(btnId, loading) {
 }
 
 
-// AUTH MODAL CONTROLLER
+
 const AuthModal = (() => {
 
     const overlay     = document.getElementById('authOverlay');
@@ -88,12 +97,12 @@ const AuthModal = (() => {
         authSuccess.style.display = panel === 'success' ? 'block' : 'none';
     }
 
-function showSuccess(name, isNew) {
+    function showSuccess(name, isNew) {
         document.getElementById('successTitle').textContent =
             isNew ? `Welcome, ${name}!` : `Welcome back, ${name}!`;
         document.getElementById('successMsg').textContent =
             isNew
-                ? "Your account is ready. Your \u20a6500 discount has been applied!"
+                ? 'Your account is ready. Your ₦500 discount has been applied!'
                 : "You're signed in to FreshBasket.";
         showPanel('success');
     }
@@ -142,16 +151,17 @@ function showSuccess(name, isNew) {
     return { open, close, showSuccess };
 })();
 
-// AUTH STATE MANAGER
+
+
 const AuthState = (() => {
 
-    const KEY      = 'freshbasket_user';
+    const KEY       = 'freshbasket_user';
     const signInBtn = document.getElementById('signInBtn');
 
-    const getUser  = () => { try { const d = sessionStorage.getItem(KEY); return d ? JSON.parse(d) : null; } catch { return null; } };
-    const saveUser = (u) => sessionStorage.setItem(KEY, JSON.stringify(u));
+    const getUser   = () => { try { const d = sessionStorage.getItem(KEY); return d ? JSON.parse(d) : null; } catch { return null; } };
+    const saveUser  = (u) => sessionStorage.setItem(KEY, JSON.stringify(u));
     const clearUser = ()  => sessionStorage.removeItem(KEY);
-    const initials  = (n) => n.split(' ').map(w => w[0]).join('').toUpperCase().slice(0,2);
+    const initials  = (n) => n.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
 
     function updateHeader() {
         const user = getUser();
@@ -162,13 +172,18 @@ const AuthState = (() => {
             const menu = document.createElement('div');
             menu.className = 'user-menu';
             menu.id        = 'userMenu';
+
+            const safeName  = escapeHTML(user.name);
+            const safeEmail = escapeHTML(user.email);
+            const safeFirst = escapeHTML(user.name.split(' ')[0]);
+
             menu.innerHTML = `
                 <button class="user-avatar" id="userAvatarBtn" aria-label="Account menu" aria-expanded="false">${initials(user.name)}</button>
-                <span class="user-name">${user.name.split(' ')[0]}</span>
+                <span class="user-name">${safeFirst}</span>
                 <div class="user-dropdown" id="userDropdown" role="menu">
                     <div class="dropdown-header">
-                        <strong>${user.name}</strong>
-                        <span>${user.email}</span>
+                        <strong>${safeName}</strong>
+                        <span>${safeEmail}</span>
                     </div>
                     <button class="dropdown-item"><i class="fas fa-shopping-bag"></i> My Orders</button>
                     <button class="dropdown-item"><i class="fas fa-heart"></i> Saved Items</button>
@@ -207,15 +222,16 @@ const AuthState = (() => {
         }
     }
 
-    function login(user) { saveUser(user); updateHeader(); }
-    function logout() { clearUser(); const m = document.getElementById('userMenu'); if (m) m.remove(); signInBtn.style.display = ''; showToast("You've been signed out. See you soon!"); }
+    function login(user)  { saveUser(user); updateHeader(); }
+    function logout()     { clearUser(); const m = document.getElementById('userMenu'); if (m) m.remove(); signInBtn.style.display = ''; showToast("You've been signed out. See you soon!"); }
     function isLoggedIn() { return !!getUser(); }
 
     updateHeader();
     return { login, logout, isLoggedIn, getUser };
 })();
 
-// SIGN IN FORM
+
+
 document.getElementById('signInForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = document.getElementById('siEmail').value.trim();
@@ -225,16 +241,16 @@ document.getElementById('signInForm').addEventListener('submit', async (e) => {
     ['siEmailErr','siPasswordErr'].forEach(clearFieldError);
     ['siEmail','siPassword'].forEach(id => setInputState(id, null));
 
-    if (!email)              { showFieldError('siEmailErr', 'Email is required.'); setInputState('siEmail','error'); valid = false; }
+    if (!email)                       { showFieldError('siEmailErr', 'Email is required.'); setInputState('siEmail','error'); valid = false; }
     else if (!emailRegex.test(email)) { showFieldError('siEmailErr', 'Please enter a valid email.'); setInputState('siEmail','error'); valid = false; }
-    if (!pass)               { showFieldError('siPasswordErr', 'Password is required.'); setInputState('siPassword','error'); valid = false; }
+    if (!pass)                        { showFieldError('siPasswordErr', 'Password is required.'); setInputState('siPassword','error'); valid = false; }
 
     if (!valid) return;
 
     setButtonLoading('signInSubmit', true);
     await new Promise(r => setTimeout(r, 1200));
 
-    const name = email.split('@')[0].replace(/[._]/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+    const name = email.split('@')[0].replace(/[._]/g,' ').replace(/\b\w/g, c => c.toUpperCase());
     setInputState('siEmail','success');
     setInputState('siPassword','success');
     setButtonLoading('signInSubmit', false);
@@ -242,7 +258,8 @@ document.getElementById('signInForm').addEventListener('submit', async (e) => {
     AuthModal.showSuccess(name, false);
 });
 
-// CREATE ACCOUNT FORM
+
+
 document.getElementById('signUpForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const name    = document.getElementById('suName').value.trim();
@@ -272,7 +289,8 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
     AuthModal.showSuccess(name, true);
 });
 
-// TOGGLE PASSWORD VISIBILITY
+
+
 document.querySelectorAll('.toggle-pw').forEach(btn => {
     btn.addEventListener('click', () => {
         const input = document.getElementById(btn.getAttribute('data-target'));
@@ -285,9 +303,113 @@ document.querySelectorAll('.toggle-pw').forEach(btn => {
     });
 });
 
-// BUTTON REACTIVITY MAP
-document.addEventListener('DOMContentLoaded', () => {
 
+function animateCounter(el, target, duration = 1800) {
+    // Guard: bail early on invalid targets instead of running an infinite loop
+    if (isNaN(target) || target <= 0) return;
+
+    let start = 0;
+    const isDecimal = !Number.isInteger(target);
+    const inc = target / (duration / 16);
+
+    const timer = setInterval(() => {
+        start += inc;
+        if (start >= target) {
+            start = target;
+            clearInterval(timer);
+        }
+        if (isDecimal)           el.textContent = start.toFixed(1);
+        else if (target >= 1000) el.textContent = Math.floor(start).toLocaleString() + '+';
+        else                     el.textContent = Math.floor(start) + '+';
+    }, 16);
+}
+
+function fireCounters(container) {
+    container.querySelectorAll('.trust-number').forEach(n => {
+        const target = parseFloat(n.dataset.target);
+        animateCounter(n, target);
+    });
+}
+
+// Multi-selector: tries every likely class name for the stats container
+const COUNTER_SELECTORS = [
+    '.trust-bar',
+    '.stats-bar',
+    '.trust-section',
+    '.stats-section',
+    '[data-counters]'
+];
+
+const counterObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                fireCounters(e.target);
+                counterObserver.unobserve(e.target);
+            }
+        });
+    },
+    { threshold: 0.3 }
+);
+
+ready(() => {
+    // Try each selector until one matches
+    let counterContainer = null;
+    for (const sel of COUNTER_SELECTORS) {
+        counterContainer = document.querySelector(sel);
+        if (counterContainer) break;
+    }
+
+    // Last-resort fallback: if no container found, fire on all number elements directly
+    if (!counterContainer) {
+        document.querySelectorAll('.trust-number[data-target]').forEach(n => {
+            const target = parseFloat(n.dataset.target);
+            animateCounter(n, target);
+        });
+        return;
+    }
+
+    // Viewport-on-load check: if element is already visible, animate immediately
+    const rect = counterContainer.getBoundingClientRect();
+    const alreadyVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (alreadyVisible) {
+        fireCounters(counterContainer);
+    } else {
+        counterObserver.observe(counterContainer);
+    }
+});
+
+
+
+const fadeObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                fadeObserver.unobserve(e.target);
+            }
+        });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+);
+
+// FIX #1 applied: replaced DOMContentLoaded with ready()
+ready(() => {
+    document.querySelectorAll(
+        '.card,.category,.product-card,.pricing-card,.faq-item,.trust-item,' +
+        '.hero-content,.hero-image,.partner-logo,.coverage-content,.coverage-visual,' +
+        '.app-content,.app-visual,.newsletter-content'
+    ).forEach(el => {
+        el.classList.add('fade-up');
+        fadeObserver.observe(el);
+    });
+});
+
+
+
+// FIX #1 applied: replaced DOMContentLoaded with ready()
+ready(() => {
     // 1. Header Sign In
     document.getElementById('signInBtn').addEventListener('click', () => AuthModal.open('signin'));
 
@@ -318,18 +440,28 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             const isApple = btn.getAttribute('aria-label').includes('App Store');
-            showToast(isApple ? 'iOS app coming soon! Subscribe below to be notified.' : 'Android app coming soon! Subscribe below to be notified.', 4000);
+            showToast(
+                isApple
+                    ? 'iOS app coming soon! Subscribe below to be notified.'
+                    : 'Android app coming soon! Subscribe below to be notified.',
+                4000
+            );
         });
     });
 
     // 7. Logo → scroll to top
-    document.querySelector('.logo').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    document.querySelector('.logo').addEventListener('click', () =>
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    );
 
     // 8. Footer coming-soon links
     const comingSoon = ['About Us','Careers','Blog','Press','Partner with Us','Contact Us','Track Order','Returns','Delivery Info'];
     document.querySelectorAll('.footer-links a[href="#"]').forEach(link => {
         if (comingSoon.includes(link.textContent.trim())) {
-            link.addEventListener('click', (e) => { e.preventDefault(); showToast(`"${link.textContent.trim()}" page coming soon!`); });
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                showToast(`"${link.textContent.trim()}" page coming soon!`);
+            });
         }
     });
 
@@ -342,67 +474,54 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// PHASE 1 — HAMBURGER MENU
+
+
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('nav-links');
 
-hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navLinks.classList.toggle('active'); });
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => { hamburger.classList.remove('active'); navLinks.classList.remove('active'); });
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
 });
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+    });
+});
+
 document.addEventListener('click', (e) => {
     if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-        hamburger.classList.remove('active'); navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
     }
 });
 
 
-// PHASE 1 — HEADER SCROLL
+
 const header = document.querySelector('.header');
-window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 50));
+window.addEventListener('scroll', () =>
+    header.classList.toggle('scrolled', window.scrollY > 50)
+);
 
 
-// PHASE 1 — BACK TO TOP
+
 const backToTop = document.getElementById('backToTop');
-window.addEventListener('scroll', () => backToTop.classList.toggle('show', window.scrollY > 400));
-backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-
-// PHASE 1 — SCROLL ANIMATIONS
-const fadeObserver = new IntersectionObserver(
-    (entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); fadeObserver.unobserve(e.target); } }); },
-    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+window.addEventListener('scroll', () =>
+    backToTop.classList.toggle('show', window.scrollY > 400)
 );
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.card,.category,.product-card,.pricing-card,.faq-item,.trust-item,.hero-content,.hero-image,.partner-logo,.coverage-content,.coverage-visual,.app-content,.app-visual,.newsletter-content')
-        .forEach(el => { el.classList.add('fade-up'); fadeObserver.observe(el); });
-});
-
-
-// PHASE 1 — ANIMATED COUNTERS
-function animateCounter(el, target, duration = 1800) {
-    let start = 0;
-    const isDecimal = !Number.isInteger(target);
-    const inc = target / (duration / 16);
-    const timer = setInterval(() => {
-        start += inc;
-        if (start >= target) { start = target; clearInterval(timer); }
-        if (isDecimal)           el.textContent = start.toFixed(1);
-        else if (target >= 1000) el.textContent = Math.floor(start).toLocaleString() + '+';
-        else                     el.textContent = Math.floor(start) + '+';
-    }, 16);
-}
-const counterObserver = new IntersectionObserver(
-    (entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('.trust-number').forEach(n => animateCounter(n, parseFloat(n.dataset.target))); counterObserver.unobserve(e.target); } }); },
-    { threshold: 0.3 }
+backToTop.addEventListener('click', () =>
+    window.scrollTo({ top: 0, behavior: 'smooth' })
 );
-document.addEventListener('DOMContentLoaded', () => { const tb = document.querySelector('.trust-bar'); if (tb) counterObserver.observe(tb); });
 
 
-// PHASE 1 — PRODUCT FILTERS
-document.addEventListener('DOMContentLoaded', () => {
+
+// FIX #1 applied: replaced DOMContentLoaded with ready()
+ready(() => {
     const filterBtns   = document.querySelectorAll('.filter-btn');
     const productCards = document.querySelectorAll('.product-card');
+
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             filterBtns.forEach(b => b.classList.remove('active'));
@@ -411,26 +530,37 @@ document.addEventListener('DOMContentLoaded', () => {
             productCards.forEach(card => {
                 const match = filter === 'all' || card.dataset.category === filter;
                 card.classList.toggle('hidden', !match);
-                if (match) { card.classList.remove('visible'); setTimeout(() => card.classList.add('visible'), 50); }
+                if (match) {
+                    card.classList.remove('visible');
+                    setTimeout(() => card.classList.add('visible'), 50);
+                }
             });
         });
     });
 });
 
 
-// PHASE 1 — ADD TO CART (auth-aware)
-document.addEventListener('DOMContentLoaded', () => {
+
+// FIX #1 applied: replaced DOMContentLoaded with ready()
+ready(() => {
     const cartToast = document.getElementById('cartToast');
     const toastMsg  = document.getElementById('cartToastMsg');
     let   toastTimer = null;
 
     document.querySelectorAll('.add-to-cart').forEach(btn => {
         btn.addEventListener('click', () => {
-            if (!AuthState.isLoggedIn()) { showToast('Please sign in to add items to your cart!'); return; }
+            if (!AuthState.isLoggedIn()) {
+                showToast('Please sign in to add items to your cart!');
+                return;
+            }
             const name = btn.closest('.product-card').querySelector('.product-name').textContent;
             btn.classList.add('added');
             btn.innerHTML = '<i class="fas fa-check"></i>';
-            setTimeout(() => { btn.classList.remove('added'); btn.innerHTML = '<i class="fas fa-plus"></i>'; }, 1500);
+            setTimeout(() => {
+                btn.classList.remove('added');
+                btn.innerHTML = '<i class="fas fa-plus"></i>';
+            }, 1500);
+            // FIX #2 applied: textContent instead of innerHTML for cart toast
             toastMsg.textContent = `${name} added to cart!`;
             cartToast.classList.add('show');
             clearTimeout(toastTimer);
@@ -440,11 +570,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// PHASE 1 — FAQ ACCORDION
-document.addEventListener('DOMContentLoaded', () => {
+
+// FIX #1 applied: replaced DOMContentLoaded with ready()
+ready(() => {
     document.querySelectorAll('.faq-item').forEach(item => {
         const q = item.querySelector('.faq-question');
         const a = item.querySelector('.faq-answer');
+
         q.addEventListener('click', () => {
             const isOpen = item.classList.contains('active');
             document.querySelectorAll('.faq-item').forEach(o => {
@@ -452,13 +584,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 o.querySelector('.faq-answer').classList.remove('open');
                 o.querySelector('.faq-question').setAttribute('aria-expanded','false');
             });
-            if (!isOpen) { item.classList.add('active'); a.classList.add('open'); q.setAttribute('aria-expanded','true'); }
+            if (!isOpen) {
+                item.classList.add('active');
+                a.classList.add('open');
+                q.setAttribute('aria-expanded','true');
+            }
         });
-        q.addEventListener('keydown', (e) => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); q.click(); } });
+
+        q.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); q.click(); }
+        });
     });
 });
 
-// PHASE 1 — SMOOTH SCROLL
+
+
 document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -468,8 +608,9 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 });
 
 
-// PHASE 2 — COVERAGE CHECKER
-document.addEventListener('DOMContentLoaded', () => {
+
+// FIX #1 applied: replaced DOMContentLoaded with ready()
+ready(() => {
     const input  = document.getElementById('coverageInput');
     const btn    = document.getElementById('coverageBtn');
     const result = document.getElementById('coverageResult');
@@ -481,17 +622,27 @@ document.addEventListener('DOMContentLoaded', () => {
     function check() {
         const q = input.value.trim().toLowerCase();
         if (!q) { showRes('error','fa-exclamation-circle','Please enter a city or neighborhood.'); return; }
-        btn.textContent = 'Checking...'; btn.disabled = true;
+        btn.textContent = 'Checking...';
+        btn.disabled = true;
         setTimeout(() => {
-            btn.textContent = 'Check Now'; btn.disabled = false;
-            const d = q.replace(/\b\w/g,c=>c.toUpperCase());
-            if (covered.some(a=>q.includes(a)||a.includes(q)))    showRes('available','fa-check-circle',`Great news! We deliver to <strong>${d}</strong>. Start your first order today.`);
-            else if (comingSoon.some(a=>q.includes(a)||a.includes(q))) showRes('unavailable','fa-clock',`Coming to <strong>${d}</strong> soon! Subscribe below to be first to know.`);
-            else showRes('unavailable','fa-info-circle',`We don't cover <strong>${d}</strong> yet, but we're expanding fast!`);
+            btn.textContent = 'Check Now';
+            btn.disabled = false;
+
+            const d = escapeHTML(q.replace(/\b\w/g, c => c.toUpperCase()));
+            if (covered.some(a => q.includes(a) || a.includes(q))) {
+                showRes('available','fa-check-circle',`Great news! We deliver to <strong>${d}</strong>. Start your first order today.`);
+            } else if (comingSoon.some(a => q.includes(a) || a.includes(q))) {
+                showRes('unavailable','fa-clock',`Coming to <strong>${d}</strong> soon! Subscribe below to be first to know.`);
+            } else {
+                showRes('unavailable','fa-info-circle',`We don't cover <strong>${d}</strong> yet, but we're expanding fast!`);
+            }
         }, 800);
     }
 
-    function showRes(type, icon, msg) { result.className = `coverage-result ${type}`; result.innerHTML = `<i class="fas ${icon}"></i><span>${msg}</span>`; }
+    function showRes(type, icon, msg) {
+        result.className = `coverage-result ${type}`;
+        result.innerHTML = `<i class="fas ${icon}"></i><span>${msg}</span>`;
+    }
 
     btn.addEventListener('click', check);
     input.addEventListener('keydown', (e) => { if (e.key === 'Enter') check(); });
@@ -499,8 +650,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// PHASE 2 — NEWSLETTER FORM
-document.addEventListener('DOMContentLoaded', () => {
+
+// FIX #1 applied: replaced DOMContentLoaded with ready()
+ready(() => {
     const form    = document.getElementById('newsletterForm');
     const emailEl = document.getElementById('newsletterEmail');
     const errEl   = document.getElementById('newsletterError');
@@ -511,16 +663,16 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const email = emailEl.value.trim();
         errEl.style.display = 'none';
-        if (!email)               { errEl.textContent='Please enter your email.'; errEl.style.display='block'; emailEl.focus(); return; }
-        if (!emailRegex.test(email)) { errEl.textContent='Please enter a valid email.'; errEl.style.display='block'; emailEl.focus(); return; }
+        if (!email)                  { errEl.textContent = 'Please enter your email.'; errEl.style.display = 'block'; emailEl.focus(); return; }
+        if (!emailRegex.test(email)) { errEl.textContent = 'Please enter a valid email.'; errEl.style.display = 'block'; emailEl.focus(); return; }
         const submitBtn = form.querySelector('.newsletter-btn');
-        submitBtn.textContent='Sending...'; submitBtn.disabled=true;
-        setTimeout(() => { form.style.display='none'; succEl.style.display='flex'; }, 1000);
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        setTimeout(() => { form.style.display = 'none'; succEl.style.display = 'flex'; }, 1000);
     });
 });
 
 
-// CONSOLE BRANDING
-console.log('%c\ud83d\uded2 FreshBasket Market', 'font-size:20px;font-weight:bold;color:#086647;');
-console.log('%c\u2705 Auth + Full Button Reactivity Active', 'font-size:12px;color:#059669;');
-console.log('%c\ud83d\ude80 Built by TonyDev', 'font-size:12px;color:#666;');
+console.log('%c🛒 Fresh Market', 'font-size:18px;font-weight:bold;color:#086647;');
+console.log('%c✅ Auth + Full Button Reactivity Active', 'font-size:12px;color:#059669;');
+console.log('%c🚀 Built by TonyDev', 'font-size:12px;color:#666;');
